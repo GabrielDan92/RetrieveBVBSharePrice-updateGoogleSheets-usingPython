@@ -3,4 +3,4 @@ Retrieve the share prices from the Bucharest Stock Exchange website (bvb.ro - Bu
 </br>
 The working environment was set up following the steps in Chapter 14 of Automate the Boring Stuff with Python (https://automatetheboringstuff.com/2e/chapter14/), author's Github profile: https://github.com/asweigart/readal.
 
-![BVB Script Demo](Media2.gif).
+![BVB Script Demo](Media2.gif)
