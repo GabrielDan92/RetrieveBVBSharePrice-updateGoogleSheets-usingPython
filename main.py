@@ -38,7 +38,8 @@ browser.quit()
 sheets = ["BRD", "BANCA TRANSILVANIA", "ROMGAZ", "NUCLEARELECTRICA", "FONDUL PROPRIETATEA"]
 
 # assign the Google Sheets workbook id
-ss = ezsheets.Spreadsheet("1zQJxdZZNFXsmOFWYEe3NdMaS2scpMr_BBE2SOJbecdI")
+SpreadsheetID = ""
+ss = ezsheets.Spreadsheet(SpreadsheetID)
 
 print("Accessing workbook " + str(ss.title) + "...")
 
