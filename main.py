@@ -52,5 +52,17 @@ for i in symbolDict:
     print(i + ": " + symbolDict[i])
     j += 1
 
-# refresh the Google Sheets workbook
+    
+# get the time
+now = datetime.datetime.now()
+
+sheet = ss["Dashboard"]
+
+# use zfill to add leading "0" to one digit values
+sheet["G5"] = "LAST KNOWN MARKET VALUE (" + \
+    str(now.day).zfill(2) + "/" + \
+    str(now.month).zfill(2) + "," + \
+    str(now.hour).zfill(2) + ":" + \
+    str(now.minute).zfill(2) + ")"
+
 ss.refresh()
