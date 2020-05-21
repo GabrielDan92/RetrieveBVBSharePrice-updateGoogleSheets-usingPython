@@ -65,4 +65,25 @@ sheet["G5"] = "LAST KNOWN MARKET VALUE (" + \
     str(now.hour).zfill(2) + ":" + \
     str(now.minute).zfill(2) + ")"
 
+# access the historic data sheet and add the current share price value
+sheet = ss["historicData"]
+print("Accessing sheet " + str(sheet.title) + "...")
+
+# find the last row
+i = 1
+while sheet.get(1,i) != '':
+    i+=1
+lastRow = i
+
+# add the date on the last row
+print("Adding date and time in the row: " + str(lastRow))
+sheet[1, lastRow] = str(now.day).zfill(2) + "/" + str(now.month).zfill(2) + "," + str(now.hour).zfill(2) + ":" + str(now.minute).zfill(2)
+
+# add the prices for each symbol on the last row
+j = 2
+for i in symbolDict:
+    print("Adding price " + symbolDict[i] + " for symbol " + i + " on column " + str(j) + ", row " + str(lastRow) + "...")
+    sheet[j, lastRow] = symbolDict[i]
+    j += 1 
+
 ss.refresh()
