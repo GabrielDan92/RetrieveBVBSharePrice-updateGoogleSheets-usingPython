@@ -13,7 +13,6 @@ def stock():
     options.add_argument("--disable-plugins-discovery")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--incognito")
-    #options.add_argument("--headless")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option("useAutomationExtension", False)
     browser = webdriver.Chrome(executable_path=r"C:\Users\user\Desktop\programming\Python\chromedriver.exe", options=options)
@@ -53,14 +52,6 @@ def googleSheets():
     ss = ezsheets.Spreadsheet("")
     print("Accessing the Google Sheet '" + str(ss.title) + "'...")
 
-    # keep looping until the prices have been retrieved
-    # while True:
-    #     print("Waiting for prices to be retrieved...")
-    #     if pricesRetrieved == True:
-    #         break
-    #     time.sleep(.5)
-    #     continue
-
     j = 0
     for i in symbolDict:
         sheet = ss[sheets[j]]
@@ -75,7 +66,6 @@ def googleSheets():
 
     # use zfill to add leading "0" to one digit values
     sheet["G5"] = "LAST KNOWN MARKET VALUE (" + str(now.day).zfill(2) + "/" + str(now.month).zfill(2) + "," + str(now.hour).zfill(2) + ":" + str(now.minute).zfill(2) + ")"
-
     sheet = ss["historicData"]          #change the active sheet to the 'historicData' sheet
     print("Accessing sheet '" + str(sheet.title) + "'...")
 
