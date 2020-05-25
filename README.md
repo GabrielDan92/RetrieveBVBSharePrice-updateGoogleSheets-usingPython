@@ -11,3 +11,7 @@ I've added a new functionality to the Python script. On top of adding the saved 
 Since Google doesn't offer a straighforward way of finding the last used row from a range of their sheets (like Microsoft does through VBA), the last row is found using a loop that goes through each cell of the table until an empty cell is found. Not the most elegant solution once you start looping through thousands of rows, but it gets the job done nevertheless. <p>
 ![BVB Script Demo](Media/Media1.gif)
   *The recording was speed up. Real time runtime is slower.
+### June Update - Thread-based parallelism
+I've now modified the source code so that it no longer waits for the scraping part to be completed in order to login to Google Sheets' platform. Generating two threads that work in parallel (one for the scraping part and one for the login data saving in the spreadhseet part) speed up the total run time by <b>more than 40%.</b><p>
+This was a great exercise and a very basic example of implementing Python's threading module to a project. I'd argue that every project that has a lot of I/O or Network usage should implement a threading solution asap.<p>
+![BVB Script Demo](Media/threading.gif) <p>
