@@ -30,7 +30,7 @@ def stock():
 # save the results to Google Sheets
 def googleSheets():
     sheets = ["BRD", "BANCA TRANSILVANIA", "ROMGAZ", "NUCLEARELECTRICA", "FONDUL PROPRIETATEA"]
-    ss = ezsheets.Spreadsheet("1zQJxdZZNFXsmOFWYEe3NdMaS2scpMr_BBE2SOJbecdI")
+    ss = ezsheets.Spreadsheet("")
     print("Accessing the Google Sheet '" + str(ss.title) + "'...")
 
     j = 0
